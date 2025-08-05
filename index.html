@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketVision Analytics - Stock Predictions & Investment Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .content-bg {
+            background-color: #f8fafc;
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold text-gray-900">MarketVision</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#stock-picks" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Stock Picks</a>
+                        <a href="#case-studies" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Case Studies</a>
+                        <a href="#insights" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Insights</a>
+                        <a href="#comparison" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">S&P 500 vs Portfolio</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-blue-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                MarketVision Analytics
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto px-4">
+                Professional Stock Predictions, Investment Insights & Business Analysis
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                <button class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+                    View Latest Picks
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="content-bg">
+        <!-- Stock Picks Section -->
+        <section id="stock-picks" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Latest Stock Picks</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Data-driven stock recommendations backed by comprehensive analysis and market research.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">AAPL</h3>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">BUY</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Strong fundamentals with upcoming product launches expected to drive growth.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-900">$175.50</span>
+                            <span class="text-green-600 font-semibold">+2.3%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">MSFT</h3>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">HOLD</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Solid cloud growth continues, maintaining steady market position.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-900">$342.75</span>
+                            <span class="text-green-600 font-semibold">+1.8%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900">TSLA</h3>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">WATCH</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Monitoring production metrics and market expansion plans closely.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-900">$248.90</span>
+                            <span class="text-red-600 font-semibold">-0.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Case Studies Section -->
+        <section id="case-studies" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Business Case Studies</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        In-depth analysis of successful investments and market movements.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="card-hover">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-8 text-white mb-6">
+                            <h3 class="text-2xl font-bold mb-4">Tech Sector Recovery Analysis</h3>
+                            <p class="text-blue-100">How we predicted the 2023 tech rebound and positioned our portfolio for maximum gains.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Portfolio Return:</span>
+                                <span class="font-bold text-green-600">+34.2%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">S&P 500 Return:</span>
+                                <span class="font-bold text-gray-900">+18.7%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Outperformance:</span>
+                                <span class="font-bold text-blue-600">+15.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover">
+                        <div class="bg-gradient-to-r from-green-500 to-teal-600 rounded-xl p-8 text-white mb-6">
+                            <h3 class="text-2xl font-bold mb-4">Energy Transition Play</h3>
+                            <p class="text-green-100">Strategic positioning in renewable energy stocks before the sector boom.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Portfolio Return:</span>
+                                <span class="font-bold text-green-600">+42.8%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Sector Average:</span>
+                                <span class="font-bold text-gray-900">+28.3%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Outperformance:</span>
+                                <span class="font-bold text-blue-600">+14.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investor Insights Section -->
+        <section id="insights" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Investor Insights</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Market analysis, trends, and strategic insights to guide your investment decisions.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <article class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="text-blue-600 text-sm font-semibold mb-2">MARKET ANALYSIS</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Q4 2024 Market Outlook</h3>
+                        <p class="text-gray-600 mb-4">Federal Reserve policy shifts and their impact on equity valuations heading into year-end.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>December 15, 2024</span>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="text-green-600 text-sm font-semibold mb-2">STRATEGY</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Defensive Positioning</h3>
+                        <p class="text-gray-600 mb-4">Building resilient portfolios for uncertain economic conditions while maintaining growth potential.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>December 12, 2024</span>
+                            <span class="mx-2">•</span>
+                            <span>7 min read</span>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="text-purple-600 text-sm font-semibold mb-2">TRENDS</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">AI Investment Wave</h3>
+                        <p class="text-gray-600 mb-4">Identifying the next generation of AI companies beyond the obvious mega-cap plays.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>December 10, 2024</span>
+                            <span class="mx-2">•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- S&P 500 vs Portfolio Comparison -->
+        <section id="comparison" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">S&P 500 vs My Portfolio</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Track our performance against the market benchmark with transparent, real-time results.
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">MarketVision Portfolio</h3>
+                            <div class="text-5xl font-bold text-blue-600 mb-2">+28.7%</div>
+                            <div class="text-gray-600 mb-6">YTD Return</div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">1 Month:</span>
+                                    <span class="font-semibold text-green-600">+4.2%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">3 Months:</span>
+                                    <span class="font-semibold text-green-600">+12.8%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">1 Year:</span>
+                                    <span class="font-semibold text-green-600">+28.7%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">S&P 500 Index</h3>
+                            <div class="text-5xl font-bold text-gray-700 mb-2">+19.4%</div>
+                            <div class="text-gray-600 mb-6">YTD Return</div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">1 Month:</span>
+                                    <span class="font-semibold text-gray-700">+2.8%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">3 Months:</span>
+                                    <span class="font-semibold text-gray-700">+8.5%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">1 Year:</span>
+                                    <span class="font-semibold text-gray-700">+19.4%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 text-center">
+                        <div class="bg-white rounded-xl p-6 inline-block">
+                            <div class="text-sm text-gray-600 mb-2">Outperformance</div>
+                            <div class="text-3xl font-bold text-green-600">+9.3%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">About MarketVision Analytics</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Combining decades of market experience with cutting-edge analysis to deliver superior investment results.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Data-Driven Analysis</h3>
+                        <p class="text-gray-600">Advanced quantitative models and fundamental analysis drive every investment decision.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Proven Track Record</h3>
+                        <p class="text-gray-600">Consistent outperformance over multiple market cycles with transparent reporting.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Educational Focus</h3>
+                        <p class="text-gray-600">Detailed insights and case studies help investors understand market dynamics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">MarketVision Analytics</h3>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Professional stock predictions and investment insights backed by rigorous analysis and proven results.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#stock-picks" class="text-gray-300 hover:text-white transition-colors">Stock Picks</a></li>
+                        <li><a href="#case-studies" class="text-gray-300 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#insights" class="text-gray-300 hover:text-white transition-colors">Insights</a></li>
+                        <li><a href="#comparison" class="text-gray-300 hover:text-white transition-colors">Performance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Details</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-gray-300">info@marketvision.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-gray-300">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span class="text-gray-300">New York, NY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 MarketVision Analytics. All rights reserved. | 
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/98');
+                nav.classList.remove('bg-white/95');
+            } else {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/98');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2';
+        mobileMenu.innerHTML = `
+            <a href="#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+            <a href="#stock-picks" class="block text-gray-700 hover:text-blue-600 py-2">Stock Picks</a>
+            <a href="#case-studies" class="block text-gray-700 hover:text-blue-600 py-2">Case Studies</a>
+            <a href="#insights" class="block text-gray-700 hover:text-blue-600 py-2">Insights</a>
+            <a href="#comparison" class="block text-gray-700 hover:text-blue-600 py-2">S&P 500 vs Portfolio</a>
+            <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+        `;
+        mobileMenu.style.display = 'none';
+        
+        mobileMenuButton.parentNode.parentNode.appendChild(mobileMenu);
+        
+        mobileMenuButton.addEventListener('click', function() {
+            if (mobileMenu.style.display === 'none') {
+                mobileMenu.style.display = 'block';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
+        });
+
+        // Button interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.includes('View Latest Picks')) {
+                    document.querySelector('#stock-picks').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else if (this.textContent.includes('Learn More')) {
+                    document.querySelector('#about').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96a292c730297c8d',t:'MTc1NDM1Nzg4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
