@@ -27,6 +27,7 @@
         
         .navbar.hidden {
             background-image: url('home_bg.jpg');
+            background-size: 100% 100%;
             filter: blur(2px);
             transform: translateY(-100%);
         }
@@ -168,9 +169,10 @@
             right: 0;
             bottom: 0;
             /*background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');*/
+            background-size: cover;
+            background-position: center 40%;
             opacity: 2;
             background-image: url('home_bg.jpg');
-            filter: blur(1px);
         }
         
         .hero-container {
@@ -197,7 +199,7 @@
         .hero-title {
             font-size: 3rem;
             font-weight: bold;
-            /*color: white;*/
+            /*color: #36454F;*/
             margin-bottom: 1.5rem;
             word-wrap: break-word;
             font-family: 'PT Serif', system-ui;
@@ -211,7 +213,7 @@
         }
         
         .hero-title-accent {
-            color: #93c5fd;
+            color: #36454F;
         }
         
                 .hero-description-container {
@@ -320,450 +322,47 @@
             margin: 0 auto;
         }
         
-        /* Grid Layouts */
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .grid-1 {
-            grid-template-columns: repeat(1, 1fr);
-        }
-        
-        .grid-2 {
-            grid-template-columns: repeat(1, 1fr);
-        }
-        
-        @media (min-width: 768px) {
-            .grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .grid-3 {
-            grid-template-columns: repeat(1, 1fr);
-        }
-        
-        @media (min-width: 768px) {
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .grid-lg-2 {
-            grid-template-columns: repeat(1, 1fr);
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        @media (min-width: 1024px) {
-            .grid-lg-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        /* Stock Cards */
-        .stock-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .stock-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .stock-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-        
-        .stock-symbol {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #111827;
-        }
-        
-        .stock-name {
-            color: #4b5563;
-        }
-        
-        .stock-price-container {
-            text-align: right;
-        }
-        
-        .stock-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #111827;
-        }
-        
-        .stock-change {
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        
-        .positive {
-            color: #10b981;
-        }
-        
-        .negative {
-            color: #ef4444;
-        }
-        
-        .confidence-section {
-            margin-bottom: 1rem;
-        }
-        
-        .confidence-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.875rem;
-            color: #4b5563;
-            margin-bottom: 0.5rem;
-        }
-        
-        .progress-bar-container {
-            width: 100%;
-            background-color: #e5e7eb;
-            border-radius: 9999px;
-            height: 0.5rem;
-        }
-        
-        .progress-bar {
-            background-color: #10b981;
-            height: 0.5rem;
-            border-radius: 9999px;
-        }
-        
-        .progress-bar-92 {
-            width: 92%;
-        }
-        
-        .progress-bar-89 {
-            width: 89%;
-        }
-        
-        .progress-bar-94 {
-            width: 94%;
-        }
-        
-        .target-price {
-            font-size: 0.875rem;
-            color: #4b5563;
-            margin-bottom: 1rem;
-        }
-        
-        .target-price-value {
-            font-weight: 600;
-            color: #10b981;
-        }
-        
-        .stock-button {
-            width: 100%;
-            background-color: #2563eb;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .stock-button:hover {
-            background-color: #1d4ed8;
-        }
-        
-        /* Case Study Cards */
-        .case-study-card {
-            background-color: white;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .case-study-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .case-study-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .case-study-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .case-study-icon-green {
-            background-color: #dcfce7;
-        }
-        
-        .case-study-icon-blue {
-            background-color: #dbeafe;
-        }
-        
-        .case-study-svg {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-        
-        .case-study-svg-green {
-            color: #16a34a;
-        }
-        
-        .case-study-svg-blue {
-            color: #2563eb;
-        }
-        
-        .case-study-info {
-            margin-left: 1rem;
-        }
-        
-        .case-study-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #111827;
-        }
-        
-        .case-study-subtitle {
-            color: #4b5563;
-        }
-        
-        .case-study-content {
-            margin-bottom: 1.5rem;
-        }
-        
-        .case-study-return {
-            font-size: 1.875rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .case-study-return-green {
-            color: #16a34a;
-        }
-        
-        .case-study-return-blue {
-            color: #2563eb;
-        }
-        
-        .case-study-description {
-            color: #4b5563;
-        }
-        
-        .case-study-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            font-size: 0.875rem;
-        }
-        
-        .case-study-stat-label {
-            color: #6b7280;
-        }
-        
-        .case-study-stat-value {
-            font-weight: 600;
-        }
-        
-        /* Insight Cards */
-        .insight-card {
-            background-color: #f9fafb;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .insight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .insight-badge {
-            margin-bottom: 1rem;
-        }
-        
-        .badge {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.625rem;
-            border-radius: 0.25rem;
-        }
-        
-        .badge-blue {
-            background-color: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .badge-green {
-            background-color: #dcfce7;
-            color: #166534;
-        }
-        
-        .badge-purple {
-            background-color: #f3e8ff;
-            color: #7c2d12;
-        }
-        
-        .insight-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #111827;
-            margin-bottom: 0.75rem;
-        }
-        
-        .insight-description {
-            color: #4b5563;
-            margin-bottom: 1rem;
-        }
-        
-        .insight-meta {
-            display: flex;
-            align-items: center;
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-        
-        .insight-icon {
-            width: 1rem;
-            height: 1rem;
-            margin-right: 0.5rem;
-        }
-        
-        /* Performance Chart Section */
-        .chart-section {
-            background-color: white;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .chart-header {
-            margin-bottom: 2rem;
-        }
-        
-        .chart-title-row {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .chart-title-row {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-        
-        .chart-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #111827;
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .chart-title {
-                margin-bottom: 0;
-            }
-        }
-        
-        .chart-legend {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-        }
-        
-        .legend-color {
-            width: 1rem;
-            height: 1rem;
-            border-radius: 0.25rem;
-            margin-right: 0.5rem;
-        }
-        
-        .legend-color-blue {
-            background-color: #2563eb;
-        }
-        
-        .legend-color-gray {
-            background-color: #9ca3af;
-        }
-        
-        .legend-text {
-            font-size: 0.875rem;
-            color: #4b5563;
-        }
-        
-        .chart-container {
-            position: relative;
-            height: 300px;
-            width: 100%;
-        }
-        
-        .performance-stats {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .performance-stats {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .performance-stat {
-            text-align: center;
-        }
-        
-        .performance-stat-value {
-            font-size: 1.875rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .performance-stat-value-blue {
-            color: #2563eb;
-        }
-        
-        .performance-stat-value-gray {
-            color: #9ca3af;
-        }
-        
-        .performance-stat-value-green {
-            color: #16a34a;
-        }
-        
-        .performance-stat-label {
-            color: #4b5563;
-        }
+        /*where the titans invest*/
+        
+
+/* Learn More section */
+
+.learn-more-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #1d4ed8; /* Blue arrow */
+  margin-bottom: 8px;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.learn-more-section:hover .arrow-up {
+  border-bottom-color: #2563eb;
+}
+
+.learn-more-button {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1d4ed8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
         
         /* About Section */
         .about-mission-title {
@@ -959,9 +558,9 @@
                 <div class="desktop-nav">
                     <a href="#home" class="desktop-nav-link">Home</a>
                     <a href="#stock-picks" class="desktop-nav-link">Stock Picks</a>
-                    <a href="#case-studies" class="desktop-nav-link">Case Studies</a>
-                    <a href="#insights" class="desktop-nav-link">Insights</a>
-                    <a href="#comparison" class="desktop-nav-link">S&P 500 vs Portfolio</a>
+                    <a href="#case-studies" class="desktop-nav-link">Business Case Studies</a>
+                    <a href="#insights" class="desktop-nav-link">Invester Insights</a>
+                    <a href="#comparison" class="desktop-nav-link">Performance</a>
                     <a href="#about" class="desktop-nav-link">About</a>
                 </div>
 
@@ -1024,61 +623,80 @@
 
 Our goal is to provide you with a comprehensive understanding of each investment idea not just the <b>“what,”</b> but the <b>“why”</b> behind it. This approach helps investors learn how to analyze businesses critically and build wealth through disciplined compounding
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3">
-                                <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Advanced AI Models</h4>
-                                <p class="text-gray-600">Machine learning algorithms trained on decades of market data</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3">
-                                <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Real-time Analysis</h4>
-                                <p class="text-gray-600">Continuous monitoring of market conditions and opportunities</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3">
-                                <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Proven Track Record</h4>
-                                <p class="text-gray-600">Consistent outperformance with transparent results</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-4">Ready to Get Started?</h4>
-                        <p class="text-gray-600 mb-6">
-                            Join thousands of investors who trust Chandu's research for their long-term investment decisions.
-                        </p>
-                        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                            Start Free Trial
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
+    <section>
+         <div style="padding-left: 30px;">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Investment Objective</h2>
+                    <p class="text-gray-600 mb-6">
+                      My investment philosophy is centered on identifying and holding a mix of proven leaders, emerging growth stories, and turnaround opportunities. I seek out established large-cap companies with strong track records of resilience, adaptability, and steady growth. Alongside these, I invest in small and mid-cap businesses that demonstrate the potential to transition into higher market segments, backed by robust fundamentals and scalable business models. I also focus on turnaround situations—quality companies that may be temporarily out of favor due to short-term challenges but possess the strategic vision, management strength, and operational capability to recover and create long-term value. By maintaining this balance between stability, growth potential, and recovery plays, my objective is to build a portfolio capable of compounding wealth consistently over time, regardless of changing market conditions.
+                    </p>
+                </div>
+    </section>
+    <section>
+    <div style="padding-left: 30px;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: #111; margin-bottom: 1.5rem; padding-left: 10px;">Investment Objective</h2>
+        <p style="color: #555; margin-bottom: 1.5rem;">
+            My investment philosophy is centered on identifying and holding a mix of proven leaders, emerging growth stories, and turnaround opportunities. I seek out established large-cap companies with strong track records of resilience, adaptability, and steady growth. Alongside these, I invest in small and mid-cap businesses that demonstrate the potential to transition into higher market segments, backed by robust fundamentals and scalable business models. I also focus on turnaround situations—quality companies that may be temporarily out of favor due to short-term challenges but possess the strategic vision, management strength, and operational capability to recover and create long-term value. By maintaining this balance between stability, growth potential, and recovery plays, my objective is to build a portfolio capable of compounding wealth consistently over time, regardless of changing market conditions.
+        </p>
+    </div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 30px; background: #fff;">
+    <h2 style="font-size: 2.5rem; font-weight: 700; color: #111; margin-bottom: 1.5rem; padding-left: 10px;">Where the Titans Invest</h2>
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <!-- Card 1 -->
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; width: 280px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" />
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #111;">John Doe</h3>
+            <ul style="list-style: none; padding: 0; margin: 0 0 18px 0; color: #555; font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 6px;">Apple (AAPL)</li>
+                <li style="margin-bottom: 6px;">Amazon (AMZN)</li>
+                <li style="margin-bottom: 6px;">Tesla (TSLA)</li>
+                <li style="margin-bottom: 6px;">Microsoft (MSFT)</li>
+                <li style="margin-bottom: 6px;">NVIDIA (NVDA)</li>
+            </ul>
+            <a href="#" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">Learn More</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; width: 280px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jane Smith" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" />
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #111;">Jane Smith</h3>
+            <ul style="list-style: none; padding: 0; margin: 0 0 18px 0; color: #555; font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 6px;">Google (GOOGL)</li>
+                <li style="margin-bottom: 6px;">Facebook (META)</li>
+                <li style="margin-bottom: 6px;">Netflix (NFLX)</li>
+                <li style="margin-bottom: 6px;">Adobe (ADBE)</li>
+                <li style="margin-bottom: 6px;">Salesforce (CRM)</li>
+            </ul>
+            <a href="#" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">Learn More</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; width: 280px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Michael Lee" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" />
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #111;">Michael Lee</h3>
+            <ul style="list-style: none; padding: 0; margin: 0 0 18px 0; color: #555; font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 6px;">Intel (INTC)</li>
+                <li style="margin-bottom: 6px;">PayPal (PYPL)</li>
+                <li style="margin-bottom: 6px;">Shopify (SHOP)</li>
+                <li style="margin-bottom: 6px;">Zoom (ZM)</li>
+                <li style="margin-bottom: 6px;">Square (SQ)</li>
+            </ul>
+            <a href="#" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Learn More Section -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin: 40px 0 50px; cursor: pointer; user-select: none;">
+        <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-bottom: 20px solid #1d4ed8; margin-bottom: 8px;"></div>
+        <a href="#" style="font-weight: 700; font-size: 1rem; color: #1d4ed8; text-decoration: none;">Learn More</a>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
