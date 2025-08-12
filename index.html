@@ -215,7 +215,8 @@
         .hero-title-accent {
             color: white;
         }
-        
+
+
                 .hero-description-container {
     text-align: left;
     text-align: justify;
@@ -539,6 +540,151 @@
             text-align: center;
             color: #9ca3af;
         }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-picture {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .profile-info h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .stocks-section h4 {
+            color: #34495e;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .stock-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .stock-item:last-child {
+            border-bottom: none;
+        }
+
+        .stock-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .stock-price {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .stock-change.positive {
+            color: #27ae60;
+        }
+
+        .stock-change.negative {
+            color: #e74c3c;
+        }
+
+        .hidden-stocks {
+            display: none;
+        }
+
+        .more-btn, .learn-more-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .more-btn:hover, .learn-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .learn-more-container {
+            text-align: center;
+        }
+
+        .learn-more-btn {
+            font-size: 16px;
+            padding: 15px 40px;
+        }
+
+        .additional-profiles {
+            display: none;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .profiles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .profile-card {
+                padding: 20px;
+            }
+            
+            .profile-picture {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                margin-right: 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -602,89 +748,407 @@
         </div>
     </section>
     
+        <title>Chandu's Compounding Corner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">About Chandu's Compounding Corner</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    The big money is not in the buying or the selling, but in the waiting.” — Charlie Munger
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto italic">
+                    "The big money is not in the buying or the selling, but in the waiting." — Charlie Munger
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
-                    <p class="text-gray-600 mb-6">
-                      Every Sunday, Chandu’s Compounding Corner shares a detailed stock pick based on thorough research and long-term value potential. Alongside the stock pick, we publish an in depth business case study that dives into the company’s economics, competitive advantages, and growth drivers.<br>
-
-Our goal is to provide you with a comprehensive understanding of each investment idea not just the <b>“what,”</b> but the <b>“why”</b> behind it. This approach helps investors learn how to analyze businesses critically and build wealth through disciplined compounding
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Every Sunday, Chandu's Compounding Corner shares a detailed stock pick based on thorough research and long-term value potential. Alongside the stock pick, we publish an in-depth business case study that dives into the company's economics, competitive advantages, and growth drivers.
                     </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our goal is to provide you with a comprehensive understanding of each investment idea—not just the <strong class="text-gray-900">"what,"</strong> but the <strong class="text-gray-900">"why"</strong> behind it. This approach helps investors learn how to analyze businesses critically and build wealth through disciplined compounding.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-600 text-white rounded-full mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Weekly Analysis</h4>
+                        <p class="text-gray-600">Detailed stock picks and business case studies delivered every Sunday</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section>
-         <div style="padding-left: 30px;">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Investment Objective</h2>
-                    <p class="text-gray-600 mb-6">
-                      My investment philosophy is centered on identifying and holding a mix of proven leaders, emerging growth stories, and turnaround opportunities. I seek out established large-cap companies with strong track records of resilience, adaptability, and steady growth. Alongside these, I invest in small and mid-cap businesses that demonstrate the potential to transition into higher market segments, backed by robust fundamentals and scalable business models. I also focus on turnaround situations—quality companies that may be temporarily out of favor due to short-term challenges but possess the strategic vision, management strength, and operational capability to recover and create long-term value. By maintaining this balance between stability, growth potential, and recovery plays, my objective is to build a portfolio capable of compounding wealth consistently over time, regardless of changing market conditions.
+
+    <!-- Investment Objective Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl font-bold text-gray-900 mb-8">Investment Objective</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        My investment philosophy is centered on identifying and holding a mix of proven leaders, emerging growth stories, and turnaround opportunities. I seek out established large-cap companies with strong track records of resilience, adaptability, and steady growth. Alongside these, I invest in small and mid-cap businesses that demonstrate the potential to transition into higher market segments, backed by robust fundamentals and scalable business models.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mt-6">
+                        I also focus on turnaround situations—quality companies that may be temporarily out of favor due to short-term challenges but possess the strategic vision, management strength, and operational capability to recover and create long-term value. By maintaining this balance between stability, growth potential, and recovery plays, my objective is to build a portfolio capable of compounding wealth consistently over time, regardless of changing market conditions.
                     </p>
                 </div>
+            </div>
+        </div>
     </section>
 
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 30px; background: #fff;">
-    <h2 style="font-size: 2.5rem; font-weight: 700; color: #111; margin-bottom: 1.5rem; padding-left: 10px;">Where the Titans Invest</h2>
+<div class="main-container">
+        <div class="profiles-grid" id="initialProfiles">
+            <!-- Profile Card 1 -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-picture"><img src="Warren Buffett.jpg" alt="Warren Buffett" style="width: 100px; height: 100px; border-radius: 10%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" /></div>
+                    <div class="profile-info">
+                        <h3>Warren Buffett</h3>
+                        <p>Senior Portfolio Manager</p>
+                    </div>
+                </div>
+                <div class="stocks-section">
+                    <h4>Top Holdings</h4>
+                    <div class="visible-stocks">
+                        <div class="stock-item">
+                            <span class="stock-name">AAPL</span>
+                            <div>
+                                <span class="stock-price">$175.43</span>
+                                <span class="stock-change positive">+2.1%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">MSFT</span>
+                            <div>
+                                <span class="stock-price">$378.85</span>
+                                <span class="stock-change positive">+1.8%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">GOOGL</span>
+                            <div>
+                                <span class="stock-price">$138.21</span>
+                                <span class="stock-change negative">-0.5%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">AMZN</span>
+                            <div>
+                                <span class="stock-price">$151.94</span>
+                                <span class="stock-change positive">+3.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden-stocks">
+                        <div class="stock-item">
+                            <span class="stock-name">TSLA</span>
+                            <div>
+                                <span class="stock-price">$248.50</span>
+                                <span class="stock-change positive">+4.7%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">NVDA</span>
+                            <div>
+                                <span class="stock-price">$875.28</span>
+                                <span class="stock-change positive">+2.9%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">META</span>
+                            <div>
+                                <span class="stock-price">$326.20</span>
+                                <span class="stock-change negative">-1.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="more-btn" onclick="toggleStocks(this)">More</button>
+                </div>
+            </div>
 
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <!-- Card 1 -->
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; width: 280px; text-align: center; display: flex; flex-direction: column; align-items: center;">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" />
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #111;">John Doe</h3>
-            <ul style="list-style: none; padding: 0; margin: 0 0 18px 0; color: #555; font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 6px;">Apple (AAPL)</li>
-                <li style="margin-bottom: 6px;">Amazon (AMZN)</li>
-                <li style="margin-bottom: 6px;">Tesla (TSLA)</li>
-                <li style="margin-bottom: 6px;">Microsoft (MSFT)</li>
-                <li style="margin-bottom: 6px;">NVIDIA (NVDA)</li>
-            </ul>
-            <a href="#" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">Learn More</a>
+            <!-- Profile Card 2 -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-picture"><img src="Bill Ackman.jpg" alt="Bill Ackman" style="width: 100px; height: 100px; border-radius: 10%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" /></div>
+                    <div class="profile-info">
+                        <h3>Bill Ackman</h3>
+                        <p>Growth Investment Specialist</p>
+                    </div>
+                </div>
+                <div class="stocks-section">
+                    <h4>Top Holdings</h4>
+                    <div class="visible-stocks">
+                        <div class="stock-item">
+                            <span class="stock-name">NFLX</span>
+                            <div>
+                                <span class="stock-price">$445.73</span>
+                                <span class="stock-change positive">+1.4%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">SHOP</span>
+                            <div>
+                                <span class="stock-price">$63.42</span>
+                                <span class="stock-change positive">+5.8%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">SQ</span>
+                            <div>
+                                <span class="stock-price">$78.91</span>
+                                <span class="stock-change negative">-2.3%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">ROKU</span>
+                            <div>
+                                <span class="stock-price">$68.15</span>
+                                <span class="stock-change positive">+7.1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden-stocks">
+                        <div class="stock-item">
+                            <span class="stock-name">ZOOM</span>
+                            <div>
+                                <span class="stock-price">$69.84</span>
+                                <span class="stock-change positive">+3.6%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">SPOT</span>
+                            <div>
+                                <span class="stock-price">$178.32</span>
+                                <span class="stock-change negative">-0.8%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">UBER</span>
+                            <div>
+                                <span class="stock-price">$62.47</span>
+                                <span class="stock-change positive">+2.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="more-btn" onclick="toggleStocks(this)">More</button>
+                </div>
+            </div>
+
+            <!-- Profile Card 3 -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-picture"><img src="Mohnish Pabrai.jpg" alt="Mohnish Pabrai" style="width: 100px; height: 100px; border-radius: 10%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" /></div>
+                    <div class="profile-info">
+                        <h3>Mohnish Pabrai</h3>
+                        <p>Value Investment Analyst</p>
+                    </div>
+                </div>
+                <div class="stocks-section">
+                    <h4>Top Holdings</h4>
+                    <div class="visible-stocks">
+                        <div class="stock-item">
+                            <span class="stock-name">BRK.B</span>
+                            <div>
+                                <span class="stock-price">$348.12</span>
+                                <span class="stock-change positive">+0.9%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">JPM</span>
+                            <div>
+                                <span class="stock-price">$147.83</span>
+                                <span class="stock-change positive">+1.7%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">JNJ</span>
+                            <div>
+                                <span class="stock-price">$160.45</span>
+                                <span class="stock-change negative">-0.3%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">PG</span>
+                            <div>
+                                <span class="stock-price">$155.67</span>
+                                <span class="stock-change positive">+0.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden-stocks">
+                        <div class="stock-item">
+                            <span class="stock-name">KO</span>
+                            <div>
+                                <span class="stock-price">$58.92</span>
+                                <span class="stock-change positive">+1.1%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">WMT</span>
+                            <div>
+                                <span class="stock-price">$165.38</span>
+                                <span class="stock-change positive">+0.6%</span>
+                            </div>
+                        </div>
+                        <div class="stock-item">
+                            <span class="stock-name">VZ</span>
+                            <div>
+                                <span class="stock-price">$40.15</span>
+                                <span class="stock-change negative">-1.4%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="more-btn" onclick="toggleStocks(this)">More</button>
+                </div>
+            </div>
         </div>
 
-        <!-- Card 2 -->
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; width: 280px; text-align: center; display: flex; flex-direction: column; align-items: center;">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jane Smith" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" />
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #111;">Jane Smith</h3>
-            <ul style="list-style: none; padding: 0; margin: 0 0 18px 0; color: #555; font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 6px;">Google (GOOGL)</li>
-                <li style="margin-bottom: 6px;">Facebook (META)</li>
-                <li style="margin-bottom: 6px;">Netflix (NFLX)</li>
-                <li style="margin-bottom: 6px;">Adobe (ADBE)</li>
-                <li style="margin-bottom: 6px;">Salesforce (CRM)</li>
-            </ul>
-            <a href="#" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">Learn More</a>
+        <!-- Additional Profiles (Hidden Initially) -->
+        <div class="additional-profiles" id="additionalProfiles">
+            <div class="profiles-grid">
+                <!-- Profile Card 4 -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-picture"><img src="Charlie Munger.jpg" alt="Charlie Munger" style="width: 100px; height: 100px; border-radius: 10%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" /></div>
+                        <div class="profile-info">
+                            <h3>Charlie Munger</h3>
+                            <p>Tech Sector Specialist</p>
+                        </div>
+                    </div>
+                    <div class="stocks-section">
+                        <h4>Top Holdings</h4>
+                        <div class="visible-stocks">
+                            <div class="stock-item">
+                                <span class="stock-name">AMD</span>
+                                <div>
+                                    <span class="stock-price">$112.45</span>
+                                    <span class="stock-change positive">+3.8%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">INTC</span>
+                                <div>
+                                    <span class="stock-price">$43.67</span>
+                                    <span class="stock-change negative">-1.9%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">CRM</span>
+                                <div>
+                                    <span class="stock-price">$218.34</span>
+                                    <span class="stock-change positive">+2.4%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">ORCL</span>
+                                <div>
+                                    <span class="stock-price">$108.92</span>
+                                    <span class="stock-change positive">+1.6%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden-stocks">
+                            <div class="stock-item">
+                                <span class="stock-name">ADBE</span>
+                                <div>
+                                    <span class="stock-price">$567.23</span>
+                                    <span class="stock-change positive">+0.9%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">NOW</span>
+                                <div>
+                                    <span class="stock-price">$678.45</span>
+                                    <span class="stock-change positive">+4.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="more-btn" onclick="toggleStocks(this)">More</button>
+                    </div>
+                </div>
+
+                <!-- Profile Card 5 -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-picture"><img src="David Tepper.jpg" alt="David Tepper" style="width: 100px; height: 100px; border-radius: 10%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" /></div>
+                        <div class="profile-info">
+                            <h3>David Tepper</h3>
+                            <p>Energy & Materials Expert</p>
+                        </div>
+                    </div>
+                    <div class="stocks-section">
+                        <h4>Top Holdings</h4>
+                        <div class="visible-stocks">
+                            <div class="stock-item">
+                                <span class="stock-name">XOM</span>
+                                <div>
+                                    <span class="stock-price">$104.78</span>
+                                    <span class="stock-change positive">+2.7%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">CVX</span>
+                                <div>
+                                    <span class="stock-price">$147.92</span>
+                                    <span class="stock-change positive">+1.3%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">FCX</span>
+                                <div>
+                                    <span class="stock-price">$38.56</span>
+                                    <span class="stock-change negative">-2.1%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">NEM</span>
+                                <div>
+                                    <span class="stock-price">$42.18</span>
+                                    <span class="stock-change positive">+3.4%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden-stocks">
+                            <div class="stock-item">
+                                <span class="stock-name">BP</span>
+                                <div>
+                                    <span class="stock-price">$35.67</span>
+                                    <span class="stock-change positive">+1.8%</span>
+                                </div>
+                            </div>
+                            <div class="stock-item">
+                                <span class="stock-name">RIO</span>
+                                <div>
+                                    <span class="stock-price">$63.45</span>
+                                    <span class="stock-change negative">-0.7%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="more-btn" onclick="toggleStocks(this)">More</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Card 3 -->
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; width: 280px; text-align: center; display: flex; flex-direction: column; align-items: center;">
-            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Michael Lee" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" />
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #111;">Michael Lee</h3>
-            <ul style="list-style: none; padding: 0; margin: 0 0 18px 0; color: #555; font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 6px;">Intel (INTC)</li>
-                <li style="margin-bottom: 6px;">PayPal (PYPL)</li>
-                <li style="margin-bottom: 6px;">Shopify (SHOP)</li>
-                <li style="margin-bottom: 6px;">Zoom (ZM)</li>
-                <li style="margin-bottom: 6px;">Square (SQ)</li>
-            </ul>
-            <a href="#" style="color: #1d4ed8; text-decoration: none; font-weight: 600;">Learn More</a>
+        <div class="learn-more-container">
+            <button class="learn-more-btn" id="learnMoreBtn" onclick="showMoreProfiles()">Learn More</button>
         </div>
     </div>
 
-    <!-- Learn More Section -->
-    <div style="display: flex; flex-direction: column; align-items: center; margin: 40px 0 50px; cursor: pointer; user-select: none;">
-        <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-bottom: 20px solid #1d4ed8; margin-bottom: 8px;"></div>
-        <a href="#" style="font-weight: 700; font-size: 1rem; color: #1d4ed8; text-decoration: none;">Learn More</a>
-    </div>
-</section>
 
 
     <!-- Footer -->
@@ -866,4 +1330,36 @@ Our goal is to provide you with a comprehensive understanding of each investment
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cdefb674f50f95',t:'MTc1NDgxMjU4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<!-- Titans container -->
+<script>
+        function toggleStocks(button) {
+            const card = button.closest('.profile-card');
+            const hiddenStocks = card.querySelector('.hidden-stocks');
+            
+            if (hiddenStocks.style.display === 'none' || hiddenStocks.style.display === '') {
+                hiddenStocks.style.display = 'block';
+                button.textContent = 'Less';
+            } else {
+                hiddenStocks.style.display = 'none';
+                button.textContent = 'More';
+            }
+        }
+
+        function showMoreProfiles() {
+            const additionalProfiles = document.getElementById('additionalProfiles');
+            const learnMoreBtn = document.getElementById('learnMoreBtn');
+            
+            if (additionalProfiles.style.display === 'none' || additionalProfiles.style.display === '') {
+                additionalProfiles.style.display = 'block';
+                learnMoreBtn.textContent = 'Show Less';
+                learnMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                additionalProfiles.style.display = 'none';
+                learnMoreBtn.textContent = 'Learn More';
+                document.getElementById('initialProfiles').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96dd4a6dd0d341fe',t:'MTc1NDk3MzU4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
 </html>
