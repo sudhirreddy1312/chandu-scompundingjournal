@@ -26,7 +26,7 @@
         }
         
         .navbar.hidden {
-            background-image: url('home_bg.jpg');
+            background-image: url('home_bg1.jpg');
             background-size: 100% 100%;
             filter: blur(2px);
             transform: translateY(-100%);
@@ -168,11 +168,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /*background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');*/
             background-size: cover;
             background-position: center 40%;
             opacity: 2;
-            background-image: url('home_bg.jpg');
+            filter: blur(2px) brightness(0.9);
+            background-image: url('home_bg1.jpg');
         }
         
         .hero-container {
@@ -199,8 +199,8 @@
         .hero-title {
             font-size: 3rem;
             font-weight: bold;
-            /*color: #36454F;*/
             margin-bottom: 1.5rem;
+            padding-bottom: 4rem;
             word-wrap: break-word;
             font-family: 'PT Serif', system-ui;
             font-weight: 500;
@@ -213,39 +213,36 @@
         }
         
         .hero-title-accent {
-            color: #36454F;
+            color: white;
         }
         
                 .hero-description-container {
-            max-width: 56rem;
-            margin: 0 auto;
-            text-align: left;
-            text-wrap: pretty;
-        }
-        
-        .hero-description {
-            font-size: 1.125rem;
-            position: absolute;
-            left: 0;
-            color: white;
-            padding-top: 40px;
-            text-rendering: geometricPrecision;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-wrap: pretty;
-            -ms-word-wrap: break-word;
-            word-wrap: break-word;
-            font-family: Inter, system-ui;
-            font-size: 15px;        
-            font-weight: 400;
-            line-height: 1.65;
-        
-        @media (min-width: 768px) {
-            .hero-description {
-                font-size: 1.25rem;
-            }
-        }
-        
+    text-align: left;
+    text-align: justify;
+    max-width: 600px; /* set a fixed width for wrapping */
+    margin-left: -60px;
+    white-space: normal;
+    overflow-wrap: break-word; /* ensures long words wrap */
+}
+
+.hero-description {
+    font-size: 15px;        
+    font-weight: 300px;
+    line-height: 1.3;
+    color: white;
+    padding-top: 40px;
+    font-family: sans-serif;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+    .hero-description {
+        font-size: 1.1rem;
+    }
+}
+
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -594,7 +591,7 @@
             </h1>
             <div class="hero-description-container">
                 <p class="hero-description">
-                    Chandu's Compounding Corner is dedicated to researching high-quality businesses and long-term investment opportunities. We believe investing is a journey, not a race. Through deep analysis, patience, and disciplined thinking, we aim to unlock the power of compounding to build lasting wealth.
+                    Chandu's Compounding Corner is dedicated to researching high-quality businesses and long-term investment opportunities. We believe investing is a journey, not a race. Through deep analysis, patience, and disciplined thinking, we aim to unlock the power of compounding to build lasting wealth. Our goal is to empower investors with insights that inspire confidence and clarity in their financial decisions.
                 </p>
             </div>
         </div>
