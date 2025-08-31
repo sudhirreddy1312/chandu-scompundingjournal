@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis - Market Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .fade-out {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .article-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.125rem;
+        }
+        
+        .dark .article-content blockquote {
+            border-left-color: #60a5fa;
+        }
+        
+        .comment-input:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #3b82f6;
+        }
+        
+        .dark .comment-input:focus {
+            ring-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50 fade-in">
+        <div class="w-full flex justify-between items-center px-6 py-2">
+            <div class="w-full flex justify-between items-center px-6 py-2">
+                <h1 class="text-xl font-semibold">Candhu's Weekly Analysis</h1>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Home</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Stock Picks</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Business Case Studies</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Invester Insights</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Performance</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="themeToggle" class="p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+  <svg id="sunIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+  </svg>
+  <svg id="moonIcon" class="w-5 h-5 block" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+  </svg>
+</button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-20">
+        <article class="max-w-3xl mx-auto px-6 py-12">
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%233b82f6'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EJD%3C/text%3E%3C/svg%3E" alt="Author" class="w-12 h-12 rounded-full">
+                    <div>
+                        <p class="font-medium">John Doe</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Senior Financial Analyst • 8 min read</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-8">
+                    <time class="text-sm text-gray-600 dark:text-gray-400">December 15, 2024</time>
+                    <button id="downloadPdf" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <h1 class="text-gray-900 dark:text-gray-100">Tesla Stock Analysis: Navigating the Electric Future</h1>
+                
+                <p class="text-xl text-gray-700 dark:text-gray-300 font-light mb-8">A comprehensive look at Tesla's market position, financial performance, and future prospects in the rapidly evolving electric vehicle industry.</p>
+                
+                <p>Tesla Inc. (NASDAQ: TSLA) continues to be one of the most closely watched stocks in the market, representing not just an investment in electric vehicles, but a bet on the future of transportation, energy storage, and autonomous driving technology.</p>
+                
+                <h2 class="text-gray-900 dark:text-gray-100">Current Market Position</h2>
+                
+                <p>As of December 2024, Tesla maintains its position as the world's most valuable automaker by market capitalization, despite increased competition from traditional manufacturers and new EV startups. The company's market cap reflects investor confidence in its technological leadership and execution capabilities.</p>
+                
+                <blockquote class="text-gray-700 dark:text-gray-300">
+                    "Tesla's ability to consistently deliver on ambitious production targets while maintaining quality standards sets it apart from competitors in the rapidly evolving EV market."
+                </blockquote>
+                
+                <h2 class="text-gray-900 dark:text-gray-100">Financial Performance Highlights</h2>
+                
+                <p>Tesla's recent quarterly results demonstrate strong operational efficiency improvements. Key metrics include:</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-6 text-lg">
+                    <li>Revenue growth of 15% year-over-year</li>
+                    <li>Improved gross margins across all vehicle segments</li>
+                    <li>Strong free cash flow generation</li>
+                    <li>Expanding energy storage business contributing to diversified revenue streams</li>
+                </ul>
+                
+                <p>The company's focus on manufacturing efficiency and cost reduction has resulted in improved profitability metrics, making Tesla increasingly attractive to value-oriented investors alongside growth investors.</p>
+                
+                <h2 class="text-gray-900 dark:text-gray-100">Future Outlook and Risks</h2>
+                
+                <p>Looking ahead, Tesla faces both significant opportunities and challenges. The global transition to electric vehicles presents a massive addressable market, while the company's investments in autonomous driving technology could unlock entirely new revenue streams.</p>
+                
+                <p>However, investors should consider potential headwinds including increased competition, regulatory changes, and the cyclical nature of the automotive industry. Tesla's premium valuation requires continued execution on growth initiatives and technological innovation.</p>
+                
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <strong>Disclaimer:</strong> This analysis is for informational purposes only and should not be considered as investment advice. Please consult with a qualified financial advisor before making investment decisions.
+                </p>
+            </div>
+        </article>
+
+        <!-- Comments Section -->
+        <section class="max-w-3xl mx-auto px-6 py-12 border-t border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-semibold mb-8">Comments</h3>
+            
+            <!-- Comment Form -->
+            <div class="mb-8">
+                <div class="flex space-x-4">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236b7280'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3E?%3C/text%3E%3C/svg%3E" alt="Your avatar" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <textarea id="commentText" placeholder="Share your thoughts on this analysis..." class="comment-input w-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 resize-none" rows="3"></textarea>
+                        <div class="flex justify-end mt-3">
+                            <button id="postComment" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">Post Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comments List -->
+            <div id="commentsList" class="space-y-6">
+                <!-- Sample Comment -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 fade-in">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-400">
+                <p>&copy; 2024 Market Insights. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle'); 
+const html = document.documentElement;
+const sunIcon = document.getElementById('sunIcon');
+const moonIcon = document.getElementById('moonIcon');
+
+// Load saved theme or default
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  html.classList.add('dark');
+  sunIcon.classList.remove('hidden');
+  moonIcon.classList.add('hidden');
+} else {
+  html.classList.remove('dark');
+  sunIcon.classList.add('hidden');
+  moonIcon.classList.remove('hidden');
+}
+
+// Toggle theme
+themeToggle.addEventListener('click', () => {
+  html.classList.toggle('dark');
+  const isDark = html.classList.contains('dark');
+
+  // Update localStorage
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+  // Update icons
+  if (isDark) {
+    sunIcon.classList.remove('hidden');
+    moonIcon.classList.add('hidden');
+  } else {
+    sunIcon.classList.add('hidden');
+    moonIcon.classList.remove('hidden');
+  }
+});
+        
+        // Auto-hide navigation functionality
+        let hideTimeout;
+        const navbar = document.getElementById('navbar');
+        const footer = document.getElementById('footer');
+        
+        function resetHideTimer() {
+            clearTimeout(hideTimeout);
+            navbar.classList.remove('fade-out');
+            navbar.classList.add('fade-in');
+            footer.classList.remove('fade-out');
+            footer.classList.add('fade-in');
+            
+            hideTimeout = setTimeout(() => {
+                navbar.classList.remove('fade-in');
+                navbar.classList.add('fade-out');
+                footer.classList.remove('fade-in');
+                footer.classList.add('fade-out');
+            }, 4000);
+        }
+        
+        // Event listeners for user activity
+        document.addEventListener('mousemove', resetHideTimer);
+        document.addEventListener('scroll', resetHideTimer);
+        document.addEventListener('click', resetHideTimer);
+        
+        // Initialize timer
+        resetHideTimer();
+        
+        // PDF Download functionality
+        document.getElementById('downloadPdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+            
+            // Get article content
+            const title = "Tesla Stock Analysis: Navigating the Electric Future";
+            const author = "John Doe - Senior Financial Analyst";
+            const date = "December 15, 2024";
+            
+            // Add title
+            pdf.setFontSize(20);
+            pdf.setFont(undefined, 'bold');
+            pdf.text(title, 20, 30, { maxWidth: 170 });
+            
+            // Add author and date
+            pdf.setFontSize(12);
+            pdf.setFont(undefined, 'normal');
+            pdf.text(author, 20, 50);
+            pdf.text(date, 20, 60);
+            
+            // Add content
+            pdf.setFontSize(11);
+            const content = `A comprehensive look at Tesla's market position, financial performance, and future prospects in the rapidly evolving electric vehicle industry.
+
+Tesla Inc. (NASDAQ: TSLA) continues to be one of the most closely watched stocks in the market, representing not just an investment in electric vehicles, but a bet on the future of transportation, energy storage, and autonomous driving technology.
+
+Current Market Position
+
+As of December 2024, Tesla maintains its position as the world's most valuable automaker by market capitalization, despite increased competition from traditional manufacturers and new EV startups. The company's market cap reflects investor confidence in its technological leadership and execution capabilities.
+
+Financial Performance Highlights
+
+Tesla's recent quarterly results demonstrate strong operational efficiency improvements. Key metrics include:
+• Revenue growth of 15% year-over-year
+• Improved gross margins across all vehicle segments
+• Strong free cash flow generation
+• Expanding energy storage business contributing to diversified revenue streams
+
+The company's focus on manufacturing efficiency and cost reduction has resulted in improved profitability metrics, making Tesla increasingly attractive to value-oriented investors alongside growth investors.
+
+Future Outlook and Risks
+
+Looking ahead, Tesla faces both significant opportunities and challenges. The global transition to electric vehicles presents a massive addressable market, while the company's investments in autonomous driving technology could unlock entirely new revenue streams.
+
+However, investors should consider potential headwinds including increased competition, regulatory changes, and the cyclical nature of the automotive industry. Tesla's premium valuation requires continued execution on growth initiatives and technological innovation.
+
+Disclaimer: This analysis is for informational purposes only and should not be considered as investment advice. Please consult with a qualified financial advisor before making investment decisions.`;
+            
+            pdf.text(content, 20, 80, { maxWidth: 170 });
+            
+            // Save the PDF
+            pdf.save('tesla-stock-analysis.pdf');
+        });
+        
+        // Comment functionality
+        document.getElementById('postComment').addEventListener('click', function() {
+            const commentText = document.getElementById('commentText');
+            const commentsList = document.getElementById('commentsList');
+            
+            if (commentText.value.trim()) {
+                const newComment = document.createElement('div');
+                newComment.className = 'flex space-x-4';
+                newComment.innerHTML = `
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236b7280'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3EYou%3C/text%3E%3C/svg%3E" alt="You" class="w-10 h-10 rounded-full">
+                    <div class="flex-1">
+                        <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="font-medium">You</span>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Just now</span>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300">${commentText.value}</p>
+                        </div>
+                    </div>
+                `;
+                
+                commentsList.insertBefore(newComment, commentsList.firstChild);
+                commentText.value = '';
+            }
+        });
+        
+        // Allow Enter key to post comment (Shift+Enter for new line)
+        document.getElementById('commentText').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                document.getElementById('postComment').click();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'977ef9ca0224de92',t:'MTc1NjY2ODk3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
