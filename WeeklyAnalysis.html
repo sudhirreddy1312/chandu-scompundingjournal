@@ -74,269 +74,517 @@
 <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
     <!-- Navigation Bar -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50 fade-in">
-        <div class="w-full flex justify-between items-center px-6 py-2">
-            <div class="w-full flex justify-between items-center px-6 py-2">
-                <h1 class="text-xl font-semibold">Candhu's Weekly Analysis</h1>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Home</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Stock Picks</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Invester Insights</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Performance</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About</a>
-                </nav>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button id="themeToggle" class="p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-  <svg id="sunIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
-    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-  </svg>
-  <svg id="moonIcon" class="w-5 h-5 block" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-  </svg>
-</button>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Candhu's Weekly Analysis</h1>
+                </div>
 
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-3 py-2 text-sm font-medium">Stock Picks</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-3 py-2 text-sm font-medium">Investor Insights</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-3 py-2 text-sm font-medium">Performance</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-3 py-2 text-sm font-medium">About</a>
+                </nav>
+
+                <!-- Right side buttons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <svg id="sunIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moonIcon" class="w-5 h-5 block" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <svg id="hamburgerIcon" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 mobile-menu-enter">
+                    <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">Home</a>
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">Stock Picks</a>
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">Investor Insights</a>
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">Performance</a>
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">About</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="pt-20 pb-20">
-        <article class="max-w-3xl mx-auto px-6 py-12">
+   <!-- Main Content -->
+    <main class="pt-20 pb-20 bg-gray-50 dark:bg-gray-900 min-h-screen">
+        <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <!-- Article Header -->
-            <header class="mb-12">
-                <div class="flex items-center space-x-4 mb-6">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%233b82f6'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EDCS%3C/text%3E%3C/svg%3E" alt="Author" class="w-12 h-12 rounded-full">
-                    <div>
-                        <p class="font-medium">Devarala Chandra Sekhar</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Private invester • 8 min read</p>
+            <header class="mb-8 sm:mb-12">
+                <!-- Author Info -->
+                <div class="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%233b82f6'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EDCS%3C/text%3E%3C/svg%3E" alt="Author" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-md">
+                    <div class="flex-1">
+                        <p class="font-semibold text-lg text-gray-900 dark:text-white">Devarala Chandra Sekhar</p>
+                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">Private Investor • 8 min read</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-between mb-8">
-                    <time class="text-sm text-gray-600 dark:text-gray-400">September 2, 2025</time>
-                    <button id="downloadPdf" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <!-- Date and Download Button -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0 mb-8">
+                    <time class="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium">September 2, 2025</time>
+                    <button id="downloadPdf" class="flex items-center justify-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-md hover:shadow-lg w-full sm:w-auto">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
-                        <span>Download PDF</span>
+                        <span class="font-medium">Download PDF</span>
                     </button>
                 </div>
             </header>
 
             <!-- Article Content -->
-           <div class="article-content max-w-3xl mx-auto px-6 py-10" role="article" aria-labelledby="article-title">
-  <!-- Meta -->
-  <div class="meta flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-4">
-    <div>
-      <span class="author font-medium">Author: Devarala Chandra Sekhar</span>
-      <span class="mx-2">•</span>
-      <time datetime="2025-01-01">2025</time>
-      <span class="mx-2">•</span>
-      <span>Est. read: 6 min</span>
-    </div>
-    <div class="tags text-xs">
-      <span class="px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">research</span>
-      <span class="px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 ml-2">lifestyle</span>
-    </div>
-  </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-8 lg:p-10" role="article" aria-labelledby="article-title">
+                <!-- Meta Information -->
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 text-sm text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-wrap items-center gap-2 sm:gap-4">
+                        <span class="font-medium">Author: Devarala Chandra Sekhar</span>
+                        <span class="hidden sm:inline">•</span>
+                        <time datetime="2025-01-01" class="font-medium">2025</time>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Est. read: 6 min</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium">research</span>
+                        <span class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-medium">lifestyle</span>
+                    </div>
+                </div>
 
-  <!-- Title & Excerpt -->
-  <header class="mb-6">
-    <h1 id="article-title" class="text-3xl md:text-4xl font-extrabold leading-tight text-gray-900 dark:text-gray-100">
-      Decoding Lululemon: Story, Products & Value (2025)
-    </h1>
+                <!-- Title & Excerpt -->
+                <header class="mb-8 sm:mb-10">
+                    <h1 id="article-title" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
+                        Decoding Lululemon: Story, Products & Value (2025)
+                    </h1>
 
-    <p class="text-xl text-gray-700 dark:text-gray-300 font-light mt-4 mb-6">
-      A narrative-first analysis of Lululemon: origin story, product moat, revenue mix, risks, and a concise intrinsic value snapshot using recent TTM metrics.
-    </p>
-  </header>
+                    <p class="text-lg sm:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 font-light leading-relaxed">
+                        A narrative-first analysis of Lululemon: origin story, product moat, revenue mix, risks, and a concise intrinsic value snapshot using recent TTM metrics.
+                    </p>
+                </header>
 
-  <!-- Story & Purpose -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Story & Purpose</h2>
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Lululemon began in a Vancouver yoga studio in 1998, built around athletic design and community. The stated mission is to elevate human potential by helping people feel their best. Management follows a “Power of Three x2” approach (product innovation, omnichannel growth, market expansion) and emphasizes values such as inclusion, courage, fun, and personal responsibility.
-    </p>
-  </section>
+<!-- Story & Purpose -->
+                    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+                            Story & Purpose
+                        </h2>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Lululemon began in a Vancouver yoga studio in 1998, built around athletic design and community. The stated mission is to elevate human potential by helping people feel their best. Management follows a "Power of Three x2" approach (product innovation, omnichannel growth, market expansion) and emphasizes values such as inclusion, courage, fun, and personal responsibility.
+                        </p>
+                    </section>
 
-  <!-- Products & Fabrics -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Products & Fabrics</h2>
+                    <!-- Products & Fabrics -->
+                    <section class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-green-600 rounded-full mr-3"></span>
+                            Products & Fabrics
+                        </h2>
+                        
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                            Lululemon's product moat is driven by proprietary fabric families that differentiate fit, feel, and performance:
+                        </p>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Lululemon’s product moat is driven by proprietary fabric families that differentiate fit, feel, and performance:
-    </p>
+                        <div class="grid gap-3 sm:gap-4 mb-4 sm:mb-6">
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Nulu</span>
+                                    <span class="text-gray-600 dark:text-gray-400"> (Align line): </span>
+                                    <span class="text-gray-700 dark:text-gray-300">buttery soft yoga fabric.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Everlux</span>
+                                    <span class="text-gray-600 dark:text-gray-400"> (Wunder Train): </span>
+                                    <span class="text-gray-700 dark:text-gray-300">ultra fast drying training fabric.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Nulux</span>
+                                    <span class="text-gray-600 dark:text-gray-400"> (Fast and Free): </span>
+                                    <span class="text-gray-700 dark:text-gray-300">lightweight running fabric.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Warpstreme</span>
+                                    <span class="text-gray-600 dark:text-gray-400"> (ABC & Commission): </span>
+                                    <span class="text-gray-700 dark:text-gray-300">structured stretch for everyday wear.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Softstreme</span>
+                                    <span class="text-gray-600 dark:text-gray-400">: </span>
+                                    <span class="text-gray-700 dark:text-gray-300">peach soft lounge sets for comfort and style.</span>
+                                </div>
+                            </div>
+                        </div>
 
-    <ul class="list-disc list-inside space-y-2 mb-4 text-lg text-gray-700 dark:text-gray-300">
-      <li><strong>Nulu</strong> (Align line): buttery soft yoga fabric.</li>
-      <li><strong>Everlux</strong> (Wunder Train): ultra fast drying training fabric.</li>
-      <li><strong>Nulux</strong> (Fast and Free): lightweight running fabric.</li>
-      <li><strong>Warpstreme</strong> (ABC & Commission): structured stretch for everyday wear.</li>
-      <li><strong>Softstreme</strong>: peach soft lounge sets for comfort and style.</li>
-    </ul>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            These fabrics underpin bestsellers Align leggings and ABC pants—and create a tangible product moat versus commoditized activewear.
+                        </p>
+                    </section>
 
-    <p class="text-gray-700 dark:text-gray-300">
-      These fabrics underpin bestsellers Align leggings and ABC pants-and create a tangible product moat versus commoditized activewear.
-    </p>
-  </section>
+                    <!-- Revenue Mix & Best Sellers -->
+                    <section class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-purple-600 rounded-full mr-3"></span>
+                            Revenue Mix & Best Sellers
+                        </h2>
 
-  <!-- Revenue Mix & Best Sellers -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Revenue Mix & Best Sellers</h2>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                            Current mix (approximate):
+                        </p>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Current mix (approximate):
-    </p>
+                        <div class="grid gap-3 sm:gap-4 mb-4 sm:mb-6">
+                            <div class="flex items-center justify-between p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-4 h-4 bg-purple-500 rounded-full"></div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Women:</span>
+                                </div>
+                                <span class="text-lg font-semibold text-purple-600 dark:text-purple-400">~63% of revenue</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Men:</span>
+                                </div>
+                                <span class="text-lg font-semibold text-blue-600 dark:text-blue-400">~24% of revenue</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
+                                    <span class="font-bold text-gray-900 dark:text-gray-100">Accessories & Footwear:</span>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-600 dark:text-gray-400">remainder</span>
+                            </div>
+                        </div>
 
-    <ul class="list-disc list-inside space-y-2 mb-3 text-lg text-gray-700 dark:text-gray-300">
-      <li><strong>Women:</strong> ~63% of revenue</li>
-      <li><strong>Men:</strong> ~24% of revenue</li>
-      <li><strong>Accessories & Footwear:</strong> remainder</li>
-    </ul>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Geographically strongest in North America; international markets, especially China are the high growth runway. Core SKUs: Align leggings, Scuba pullovers, ABC pants, Pace Breaker shorts. Everlux and Softstreme are currently underrated and could scale further.
+                        </p>
+                    </section>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Geographically strongest in North America; international markets, especially China are the high growth runway. Core SKUs: Align leggings, Scuba pullovers, ABC pants, Pace Breaker shorts. Everlux and Softstreme are currently underrated and could scale further.
-    </p>
-  </section>
+                    <!-- Competition & Risks -->
+                    <section class="bg-gradient-to-r from-red-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-red-600 rounded-full mr-3"></span>
+                            Competition & Risks
+                        </h2>
 
-  <!-- Competition & Risks -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Competition & Risks</h2>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                            Competitive set includes Alo, Athleta, Vuori, and Nike. Lululemon's premium pricing is supported by fabric IP and strong brand equity, but notable risks remain:
+                        </p>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Competitive set includes Alo, Athleta, Vuori, and Nike. Lululemon’s premium pricing is supported by fabric IP and strong brand equity, but notable risks remain:
-    </p>
+                        <div class="grid gap-3 sm:gap-4">
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border-l-4 border-red-500">
+                                <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Consumer spending weakness or macro slowdowns</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border-l-4 border-red-500">
+                                <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Tariff exposure and concentrated supplier relationships</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border-l-4 border-red-500">
+                                <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Competitors innovating faster or engaging in aggressive discounting</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border-l-4 border-red-500">
+                                <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Integration & execution risks from past acquisitions (e.g., Mirror)</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border-l-4 border-red-500">
+                                <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Margin pressure from supply chain shocks</span>
+                            </div>
+                        </div>
+                    </section>
+<!-- Growth Drivers -->
+                    <section class="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-teal-600 rounded-full mr-3"></span>
+                            Growth Drivers
+                        </h2>
 
-    <ul class="list-disc list-inside space-y-2 mb-3 text-lg text-gray-700 dark:text-gray-300">
-      <li>Consumer spending weakness or macro slowdowns</li>
-      <li>Tariff exposure and concentrated supplier relationships</li>
-      <li>Competitors innovating faster or engaging in aggressive discounting</li>
-      <li>Integration & execution risks from past acquisitions (e.g., Mirror)</li>
-      <li>Margin pressure from supply chain shocks</li>
-    </ul>
-  </section>
+                        <div class="grid gap-3 sm:gap-4">
+                            <div class="flex items-start space-x-4 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex-shrink-0 w-8 h-8 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center">
+                                    <span class="text-sm font-bold text-teal-600 dark:text-teal-400">1</span>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300">International expansion (China, EMEA).</span>
+                            </div>
+                            <div class="flex items-start space-x-4 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex-shrink-0 w-8 h-8 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center">
+                                    <span class="text-sm font-bold text-teal-600 dark:text-teal-400">2</span>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300">Men's category penetration—management is prioritizing this segment.</span>
+                            </div>
+                            <div class="flex items-start space-x-4 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex-shrink-0 w-8 h-8 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center">
+                                    <span class="text-sm font-bold text-teal-600 dark:text-teal-400">3</span>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300">Footwear and accessories expansion raising average transaction value.</span>
+                            </div>
+                            <div class="flex items-start space-x-4 p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div class="flex-shrink-0 w-8 h-8 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center">
+                                    <span class="text-sm font-bold text-teal-600 dark:text-teal-400">4</span>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300">Digital membership & platform monetization—recurring revenue potential.</span>
+                            </div>
+                        </div>
+                    </section>
 
-  <!-- Growth Drivers -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Growth Drivers</h2>
+                    <!-- Financial Snapshot -->
+                    <section class="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-amber-600 rounded-full mr-3"></span>
+                            Financial Snapshot
+                        </h2>
 
-    <ol class="list-decimal list-inside space-y-2 mb-3 text-lg text-gray-700 dark:text-gray-300">
-      <li>International expansion (China, EMEA).</li>
-      <li>Men’s category penetration-management is prioritizing this segment.</li>
-      <li>Footwear and accessories expansion raising average transaction value.</li>
-      <li>Digital membership & platform monetization-recurring revenue potential.</li>
-    </ol>
-  </section>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm mb-4 sm:mb-6">
+                            <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Historical revenue growth: roughly <span class="font-bold text-amber-600 dark:text-amber-400">$3.3B (FY2018)</span> → <span class="font-bold text-amber-600 dark:text-amber-400">$10.6B (FY2024)</span>. TTM EPS ≈ <span class="font-bold text-green-600 dark:text-green-400">$14.7</span>. Balance sheet: low financial debt, material operating lease obligations. Operating margins are high for the industry (near <span class="font-bold text-amber-600 dark:text-amber-400">23%</span>).
+                            </p>
+                        </div>
 
-  <!-- Financial Snapshot -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Financial Snapshot</h2>
+                        <blockquote class="bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-700 border-l-4 border-amber-500 p-4 sm:p-6 rounded-r-lg">
+                            <svg class="w-8 h-8 text-amber-500 mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                            <p class="text-base sm:text-lg italic text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Lululemon mixes premium product engineering with community led brand loyalty, this combination drives high unit economics but requires continued execution to justify premium valuation.
+                            </p>
+                        </blockquote>
+                    </section>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Historical revenue growth: roughly $3.3B (FY2018) → $10.6B (FY2024). TTM EPS ≈ <strong>$14.7</strong>. Balance sheet: low financial debt, material operating lease obligations. Operating margins are high for the industry (near 23%).
-    </p>
+                    <!-- Intrinsic Value & Entry Strategy -->
+                    <section class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-indigo-600 rounded-full mr-3"></span>
+                            Intrinsic Value & Entry Strategy
+                        </h2>
 
-    <blockquote class="pl-4 border-l-4 border-gray-200 dark:border-gray-700 italic text-gray-700 dark:text-gray-300">
-      Lululemon mixes premium product engineering with community led brand loyalty, this combination drives high unit economics but requires continued execution to justify premium valuation.
-    </blockquote>
-  </section>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm">
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                                <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                    <div class="text-2xl font-bold text-green-600 dark:text-green-400">$14.7</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">TTM EPS</div>
+                                </div>
+                                <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                    <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">13.7×</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Trailing P/E</div>
+                                </div>
+                                <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                    <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">$201.39</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Implied Price</div>
+                                </div>
+                                <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                    <div class="text-2xl font-bold text-red-600 dark:text-red-400">-0.3%</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">vs. Current ~$202</div>
+                                </div>
+                            </div>
+                            <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Baseline (context): TTM EPS ≈ <span class="font-bold text-green-600 dark:text-green-400">$14.7</span> with a trailing P/E ≈ <span class="font-bold text-blue-600 dark:text-blue-400">13.7×</span> - implied price ≈ <span class="font-bold text-indigo-600 dark:text-indigo-400">$201.39</span> (≈ <span class="text-red-600 dark:text-red-400 font-semibold">-0.3%</span> vs. current ~$202).
+                            </p>
+                        </div>
+                    </section>
+  <div class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                            <div class="px-4 sm:px-6 py-3 bg-indigo-50 dark:bg-indigo-900/20 border-b border-gray-200 dark:border-gray-700">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Valuation Scenarios</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Price targets across different EPS and P/E multiples</p>
+                            </div>
+                            
+                            <div class="overflow-x-auto mb-4">
+                                <table class="w-full text-sm border-collapse border border-gray-300 dark:border-gray-700">
+                                    <thead class="bg-gray-50 dark:bg-gray-800">
+                                        <tr class="border-b border-gray-300 dark:border-gray-700">
+                                            <th class="text-left p-3 text-gray-700 dark:text-gray-300">EPS Scenario (USD)</th>
+                                            <th class="text-left p-3 text-gray-700 dark:text-gray-300">P/E Multiple</th>
+                                            <th class="text-left p-3 text-gray-700 dark:text-gray-300">Projected Price (USD)</th>
+                                            <th class="text-left p-3 text-gray-700 dark:text-gray-300">Upside vs. $202</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Baseline -->
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 font-medium text-gray-700 dark:text-gray-300">Current (14.7)</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">13.7×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">201</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">Baseline</td>
+                                        </tr>
 
-  <!-- Intrinsic Value & Entry Strategy -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Intrinsic Value & Entry Strategy</h2>
+                                        <!-- EPS 15.0 -->
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td rowspan="2" class="p-3 text-gray-700 dark:text-gray-300">15.0</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">17×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">255</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+26%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">18×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">270</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+34%</td>
+                                        </tr>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-4">
-      Baseline (context): TTM EPS ≈ <strong>$14.7</strong> with a trailing P/E ≈ <strong>13.7×</strong> - implied price ≈ <strong>$201.39</strong> (≈ <span class="text-red-600 dark:text-red-400">-0.3%</span> vs. current ~$202).
-    </p>
+                                        <!-- EPS 15.5 -->
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td rowspan="3" class="p-3 text-gray-700 dark:text-gray-300">15.5</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">18×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">279</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+38%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">20×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">310</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+53%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">22×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">341</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+69%</td>
+                                        </tr>
 
-    <!-- Valuation table -->
-    <div class="overflow-x-auto mb-4">
-      <table class="w-full text-sm border-collapse">
-        <thead class="bg-gray-50 dark:bg-gray-800">
-          <tr>
-            <th class="text-left p-3 text-gray-700 dark:text-gray-300">EPS estimate</th>
-            <th class="text-left p-3 text-gray-700 dark:text-gray-300">18×</th>
-            <th class="text-left p-3 text-gray-700 dark:text-gray-300">20×</th>
-            <th class="text-left p-3 text-gray-700 dark:text-gray-300">22×</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-t border-gray-100 dark:border-gray-700">
-            <td class="p-3 text-gray-700 dark:text-gray-300 font-medium">Baseline: EPS = 14.7, P/E = 13.7</td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">Implied: <strong>$201.39</strong><br><span class="text-sm text-gray-600 dark:text-gray-400">Upside: <strong>-0.3%</strong></span></td>
-            <td class="p-3"></td>
-            <td class="p-3"></td>
-          </tr>
+                                        <!-- EPS 16.5 -->
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td rowspan="3" class="p-3 text-gray-700 dark:text-gray-300">16.5</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">18×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">297</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+47%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">20×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">330</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+63%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">22×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">363</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+80%</td>
+                                        </tr>
+                                        <!-- EPS 16.5 -->
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td rowspan="3" class="p-3 text-gray-700 dark:text-gray-300">17.5</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">18×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">315</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+56%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">20×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">350</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+73%</td>
+                                        </tr>
+                                        <tr class="border-t border-gray-300 dark:border-gray-700">
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">22×</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">385</td>
+                                            <td class="p-3 text-gray-700 dark:text-gray-300">+91%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+           
 
-          <!-- EPS 15.5 -->
-          <tr class="border-t border-gray-100 dark:border-gray-700">
-            <td class="p-3 text-gray-700 dark:text-gray-300">EPS = <strong>$15.50</strong></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$279.00<br><span class="text-sm text-green-600 dark:text-green-400">+38.1%</span></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$310.00<br><span class="text-sm text-green-600 dark:text-green-400">+53.5%</span></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$341.00<br><span class="text-sm text-green-600 dark:text-green-400">+68.8%</span></td>
-          </tr>
-
-          <!-- EPS 16.5 -->
-          <tr class="border-t border-gray-100 dark:border-gray-700">
-            <td class="p-3 text-gray-700 dark:text-gray-300">EPS = <strong>$16.50</strong></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$297.00<br><span class="text-sm text-green-600 dark:text-green-400">+47.0%</span></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$330.00<br><span class="text-sm text-green-600 dark:text-green-400">+63.4%</span></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$363.00<br><span class="text-sm text-green-600 dark:text-green-400">+79.7%</span></td>
-          </tr>
-
-          <!-- EPS 17.5 -->
-          <tr class="border-t border-gray-100 dark:border-gray-700">
-            <td class="p-3 text-gray-700 dark:text-gray-300">EPS = <strong>$17.50</strong></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$315.00<br><span class="text-sm text-green-600 dark:text-green-400">+55.9%</span></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$350.00<br><span class="text-sm text-green-600 dark:text-green-400">+73.3%</span></td>
-            <td class="p-3 text-gray-700 dark:text-gray-300">$385.00<br><span class="text-sm text-green-600 dark:text-green-400">+90.6%</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="text-gray-700 dark:text-gray-300">
+<p class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
       <strong>Notes:</strong> Upside is calculated vs. a reference price of <strong>$202</strong>. These scenarios are illustrative - they assume stable multiples and do not model changes in shares outstanding, margins, or macro risk premia.
     </p>
-  </section>
+ <!-- Conclusion & Strategy -->
+                    <section class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 sm:p-8">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 flex items-center">
+                            <span class="w-2 h-8 bg-gray-600 rounded-full mr-3"></span>
+                            Conclusion & Entry Strategy
+                        </h2>
 
-  <!-- Conclusion & Strategy -->
-  <section class="mb-8">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">Conclusion & Entry Strategy</h2>
+                        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                            Lululemon mixes a product-led moat with category premium pricing. Growth vectors (men's, footwear, international, membership) present meaningful upside if executed well. The baseline valuation (~$201.39) sits near today's market price, so investors should seek either: (a) conviction in higher future EPS and/or higher multiple, or (b) a margin-of-safety entry when prices give a discount to justified intrinsic value.
+                        </p>
 
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Lululemon mixes a product-led moat with category premium pricing. Growth vectors (men’s, footwear, international, membership) present meaningful upside if executed well. The baseline valuation (~$201.39) sits near today’s market price, so investors should seek either: (a) conviction in higher future EPS and/or higher multiple, or (b) a margin-of-safety entry when prices give a discount to justified intrinsic value.
-    </p>
+                        <aside class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 p-4 sm:p-6 rounded-lg border border-gray-200 dark:border-gray-600 mt-4">
+                            <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center">
+                                <svg class="w-5 h-5 text-gray-600 dark:text-gray-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                Key Takeaways
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <span>Product engineering + brand = durable pricing power, but execution is essential.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <span>Men's and international expansion are the clearest levers for scale.</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <span>A fair-value entry requires conviction on future EPS growth or a re-rating of multiples.</span>
+                                </li>
+                            </ul>
+                        </aside>
+                    </section>
 
-    <aside class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-100 dark:border-gray-700 mt-4">
-      <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Key takeaways</h3>
-      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
-        <li>Product engineering + brand = durable pricing power, but execution is essential.</li>
-        <li>Men’s and international expansion are the clearest levers for scale.</li>
-        <li>A fair-value entry requires conviction on future EPS growth or a re-rating of multiples.</li>
-      </ul>
-    </aside>
-  </section>
-
-  <!-- Disclaimer -->
-  <footer class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
-    <strong>Disclaimer:</strong> This analysis is informational only and not investment advice. Always consult a licensed financial professional before making investment decisions.
-  </footer>
-</div>
-
+                    <!-- Disclaimer -->
+                    <footer class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
+                        <div class="flex items-start space-x-2">
+                            <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <strong>Disclaimer:</strong> This analysis is informational only and not investment advice. Always consult a licensed financial professional before making investment decisions.
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
         </article>
 
         <!-- Comments Section -->
-        <section class="max-w-3xl mx-auto px-6 py-12 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-2xl font-semibold mb-8">Comments</h3>
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 border-t border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 sm:mb-8">Comments</h3>
 
             <!-- Comment Form -->
             <div class="mb-8">
-                <div class="flex space-x-4">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236b7280'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3E?%3C/text%3E%3C/svg%3E" alt="Your avatar" class="w-10 h-10 rounded-full">
+                <div class="flex space-x-3 sm:space-x-4">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236b7280'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3E?%3C/text%3E%3C/svg%3E" alt="Your avatar" class="w-10 h-10 rounded-full flex-shrink-0">
                     <div class="flex-1">
-                        <textarea id="commentText" placeholder="Share your thoughts on this analysis..." class="comment-input w-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 resize-none" rows="3"></textarea>
+                        <textarea id="commentText" placeholder="Share your thoughts on this analysis, your thoughts help us grow" class="w-full p-3 sm:p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" rows="3"></textarea>
                         <div class="flex justify-end mt-3">
-                            <button id="postComment" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">Post Comment</button>
+                            <button id="postComment" class="px-4 sm:px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium">Post Comment</button>
                         </div>
                     </div>
                 </div>
@@ -344,7 +592,28 @@
 
             <!-- Comments List -->
             <div id="commentsList" class="space-y-6">
-                <!-- Sample Comment -->
+                <!-- Sample Comments will be added here -->
+                <div class="flex space-x-3 sm:space-x-4 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2310b981'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='14' font-weight='bold'%3EJD%3C/text%3E%3C/svg%3E" alt="User avatar" class="w-10 h-10 rounded-full flex-shrink-0">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="font-semibold text-gray-900 dark:text-gray-100">John Doe</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2 hours ago</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Great analysis! The fabric differentiation point is particularly compelling. I've been tracking LULU for a while and your valuation scenarios align well with my own models. The international expansion story is definitely the key catalyst to watch.</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-3 sm:space-x-4 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23f59e0b'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='14' font-weight='bold'%3ESM%3C/text%3E%3C/svg%3E" alt="User avatar" class="w-10 h-10 rounded-full flex-shrink-0">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="font-semibold text-gray-900 dark:text-gray-100">Sarah Miller</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">5 hours ago</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Interesting take on the men's segment potential. Do you think they can maintain premium pricing as they scale into more competitive categories like men's athletic wear? Nike and Adidas have much deeper pockets for marketing and R&D.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -483,48 +752,101 @@ document.getElementById('downloadPdf').addEventListener('click', function() {
 
     // Add content
     pdf.setFontSize(11);
-    const content = `Introduction: Story First
+    const content = `CANDHU'S WEEKLY ANALYSIS
 
-Our goal with this report is to understand Lululemon not just through numbers but via its narrative-how it started, what it sells, where it makes money, and why customers adore the brand. Inspired by Aswath Damodaran’s “story is important,” we break down the complex financials into bite-sized insights.
+DECODING LULULEMON: STORY, PRODUCTS & VALUE (2025)
 
-Story & Purpose
+Author: Devarala Chandra Sekhar
+Private Investor
+Date: September 2, 2025
+Estimated Read: 8 minutes
 
-Lululemon began in a Vancouver yoga studio in 1998, inspired by athletic design and community. The brand’s mission is to elevate human potential by helping people feel their best. Its growth has been guided by a “Power of Three x2” plan (product innovation, omnichannel growth, and market expansion) and values like inclusion, courage, fun, and personal responsibility.
+A narrative-first analysis of Lululemon: origin story, product moat, revenue mix, risks, and a concise intrinsic value snapshot using recent TTM metrics.
 
-Products & Fabrics
+INTRODUCTION: STORY FIRST
 
-Lululemon is known for proprietary fabric families:
-• Nulu (Align line): buttery-soft yoga fabric.
-• Everlux (Wunder Train): ultra-fast-drying training fabric.
-• Nulux (Fast and Free): lightweight running fabric.
-• Warpstreme (ABC & Commission pants): structured stretch for everyday wear.
-• Softstreme (oversized lounge sets): peach-soft feel.
+Our goal with this report is to understand Lululemon not just through numbers but via its narrative - how it started, what it sells, where it makes money, and why customers adore the brand. Inspired by Aswath Damodaran's "story is important," we break down the complex financials into bite-sized insights.
 
-These fabrics power their best sellers Align leggings for women and ABC pants for men and give a clear moat against rivals.
+STORY & PURPOSE
 
-Revenue Mix & Best Sellers
+Lululemon began in a Vancouver yoga studio in 1998, built around athletic design and community. The stated mission is to elevate human potential by helping people feel their best. Management follows a "Power of Three x2" approach (product innovation, omnichannel growth, market expansion) and emphasizes values such as inclusion, courage, fun, and personal responsibility.
 
-Women’s products contribute roughly 63% of revenue, men’s about 24%, and accessories/footwear the rest. Sales are strongest in North America but international markets, especially China, are growing rapidly. Best sellers include Align leggings, Scuba pullovers, ABC pants, and Pace Breaker shorts. Undervalued gems include Everlux training bottoms and Softstreme loungewear, which have room to become future leaders.
+PRODUCTS & FABRICS
 
-Competition & Risks
+Lululemon's product moat is driven by proprietary fabric families that differentiate fit, feel, and performance:
 
-Major rivals include Alo, Athleta, Vuori, and Nike. Lululemon commands a higher price partly thanks to fabric technology and brand prestige. However, risks include consumer spending slowdowns, tariff impacts, concentrated suppliers, competitors’ innovation, and lingering Mirror acquisition issues. Supply chain disruption or aggressive discounting could hit margins.
+• Nulu (Align line): buttery soft yoga fabric
+• Everlux (Wunder Train): ultra fast drying training fabric  
+• Nulux (Fast and Free): lightweight running fabric
+• Warpstreme (ABC & Commission): structured stretch for everyday wear
+• Softstreme: peach soft lounge sets for comfort and style
 
-Growth Drivers
-• International expansion: China and EMEA remain high-growth markets.
-• Men’s category: Still underpenetrated; management is focusing heavily here.
-• Footwear and accessories: A newer product line raising average transaction value.
-• Digital membership: Potentially drives recurring revenue.
+These fabrics underpin bestsellers Align leggings and ABC pants—and create a tangible product moat versus commoditized activewear.
 
-Financial Snapshot
+REVENUE MIX & BEST SELLERS
 
-Revenue has climbed from around $3.3B in FY2018 to $10.6B in FY2024, with trailing-twelve-month EPS about $14.7. The balance sheet shows low financial debt but large lease obligations; operating margins are industry leading, near 23%.
+Current mix (approximate):
+• Women: ~63% of revenue
+• Men: ~24% of revenue  
+• Accessories & Footwear: remainder
 
-Intrinsic Value & Entry Strategy
+Geographically strongest in North America; international markets, especially China are the high growth runway. Core SKUs: Align leggings, Scuba pullovers, ABC pants, Pace Breaker shorts. Everlux and Softstreme are currently underrated and could scale further.
 
-Below is the updated valuation table. We add a baseline row using current TTM EPS (~$14.7) and P/E (~13.7×) for context. The scenarios use EPS estimates of $15.5, $16.5, and $17.5 with P/E multiples of 18×, 20×, and 22×. Upside is calculated relative to today’s ~$202 share price.
+COMPETITION & RISKS
 
-Disclaimer: This analysis is for informational purposes only and should not be considered as investment advice. Please consult with a qualified financial advisor before making investment decisions.`;
+Competitive set includes Alo, Athleta, Vuori, and Nike. Lululemon's premium pricing is supported by fabric IP and strong brand equity, but notable risks remain:
+
+• Consumer spending weakness or macro slowdowns
+• Tariff exposure and concentrated supplier relationships
+• Competitors innovating faster or engaging in aggressive discounting
+• Integration & execution risks from past acquisitions (e.g., Mirror)
+• Margin pressure from supply chain shocks
+
+GROWTH DRIVERS
+
+1. International expansion (China, EMEA)
+2. Men's category penetration—management is prioritizing this segment
+3. Footwear and accessories expansion raising average transaction value
+4. Digital membership & platform monetization—recurring revenue potential
+
+FINANCIAL SNAPSHOT
+
+Historical revenue growth: roughly $3.3B (FY2018) → $10.6B (FY2024). TTM EPS ≈ $14.7. Balance sheet: low financial debt, material operating lease obligations. Operating margins are high for the industry (near 23%).
+
+"Lululemon mixes premium product engineering with community led brand loyalty, this combination drives high unit economics but requires continued execution to justify premium valuation."
+
+INTRINSIC VALUE & ENTRY STRATEGY
+
+Baseline (context): TTM EPS ≈ $14.7 with a trailing P/E ≈ 13.7× - implied price ≈ $201.39 (≈ -0.3% vs. current ~$202).
+
+VALUATION SCENARIOS
+
+EPS Scenario | P/E Multiple | Projected Price | Upside vs. $202
+Current (14.7) | 13.7× | $201 | Baseline
+15.0 | 17× | $255 | +26%
+15.0 | 18× | $270 | +34%
+15.5 | 18× | $279 | +38%
+15.5 | 20× | $310 | +53%
+15.5 | 22× | $341 | +69%
+16.5 | 18× | $297 | +47%
+16.5 | 20× | $330 | +63%
+16.5 | 22× | $363 | +80%
+
+CONCLUSION & ENTRY STRATEGY
+
+Lululemon mixes a product-led moat with category premium pricing. Growth vectors (men's, footwear, international, membership) present meaningful upside if executed well. The baseline valuation (~$201.39) sits near today's market price, so investors should seek either: (a) conviction in higher future EPS and/or higher multiple, or (b) a margin-of-safety entry when prices give a discount to justified intrinsic value.
+
+KEY TAKEAWAYS
+
+• Product engineering + brand = durable pricing power, but execution is essential
+• Men's and international expansion are the clearest levers for scale
+• A fair-value entry requires conviction on future EPS growth or a re-rating of multiples
+
+DISCLAIMER
+
+This analysis is informational only and not investment advice. Always consult a licensed financial professional before making investment decisions.
+
+© 2025 Candhu's Weekly Analysis. All rights reserved.`;
 
     // Split text to fit page width
 const lines = pdf.splitTextToSize(content, 170);
