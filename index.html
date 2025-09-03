@@ -6,6 +6,42 @@
     <title>Chandu's Compounding Corner - Long-term Investment Research & Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'xs': '475px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .mobile-menu-enter {
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
     <style>
         /* Base Styles */
         body {
@@ -728,19 +764,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg">
-        <div class="hero-container">
-            <h1 class="hero-title">
-                <span class="hero-title-accent">Chandu's Compounding Corner</span>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="hero-container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="hero-title mb-6 sm:mb-8 lg:mb-10">
+                <span class="hero-title-accent text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight break-words hyphens-auto">
+                    Chandu's Compounding Corner
+                </span>
             </h1>
-            <div class="hero-description-container">
-                <p class="hero-description">
+            <div class="hero-description-container max-w-4xl mx-auto">
+                <p class="hero-description text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed px-4 sm:px-6 lg:px-8">
                     Chandu's Compounding Corner is dedicated to researching high-quality businesses and long-term investment opportunities. We believe investing is a journey, not a race. Through deep analysis, patience, and disciplined thinking, we aim to unlock the power of compounding to build lasting wealth. Our goal is to empower investors with insights that inspire confidence and clarity in their financial decisions.
                 </p>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <svg class="scroll-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="scroll-icon w-6 h-6 sm:w-8 sm:h-8 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>
@@ -762,7 +800,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">About Chandu's Compounding Corner</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto italic">
-                    "The big money is not in the buying or the selling, but in the waiting." — Charlie Munger
+                    "The big money is not in the buying or the selling, but in the waiting." - Charlie Munger
                 </p>
             </div>
             
@@ -811,7 +849,7 @@
             </div>
         </div>
     </section>
-
+<h2 class="text-4xl font-bold text-gray-900 mb-8">Where the Grandmaster's Investors</h2>
 <div class="main-container">
         <div class="profiles-grid" id="initialProfiles">
             <!-- Profile Card 1 -->
