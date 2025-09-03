@@ -80,7 +80,6 @@
                 <nav class="hidden md:flex space-x-6">
                     <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Home</a>
                     <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Stock Picks</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Business Case Studies</a>
                     <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Invester Insights</a>
                     <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Performance</a>
                     <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About</a>
@@ -108,12 +107,12 @@
                 <div class="flex items-center space-x-4 mb-6">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%233b82f6'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EJD%3C/text%3E%3C/svg%3E" alt="Author" class="w-12 h-12 rounded-full">
                     <div>
-                        <p class="font-medium">John Doe</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Senior Financial Analyst • 8 min read</p>
+                        <p class="font-medium">Devarala Chandra Sekhar</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Private invester • 8 min read</p>
                     </div>
                 </div>
                 <div class="flex items-center justify-between mb-8">
-                    <time class="text-sm text-gray-600 dark:text-gray-400">December 15, 2024</time>
+                    <time class="text-sm text-gray-600 dark:text-gray-400">September 2, 2025</time>
                     <button id="downloadPdf" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -128,7 +127,7 @@
   <!-- Meta -->
   <div class="meta flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-4">
     <div>
-      <span class="author font-medium">Author: Chandu</span>
+      <span class="author font-medium">Author: Devarala Chandra Sekhar</span>
       <span class="mx-2">•</span>
       <time datetime="2025-01-01">2025</time>
       <span class="mx-2">•</span>
@@ -391,7 +390,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Chandu's Compounding Corner. All rights reserved.</p>
+                <p>&copy; 2025 Chandu's Compounding Corner. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -483,38 +482,112 @@ themeToggle.addEventListener('click', () => {
             pdf.text(date, 20, 60);
             
             // Add content
-            pdf.setFontSize(11);
-            const content = `A comprehensive look at Tesla's market position, financial performance, and future prospects in the rapidly evolving electric vehicle industry.
+           pdf.setFontSize(14);
+pdf.text("Decoding Lululemon: Story, Products & Value (2025)", 20, 30);
 
-Tesla Inc. (NASDAQ: TSLA) continues to be one of the most closely watched stocks in the market, representing not just an investment in electric vehicles, but a bet on the future of transportation, energy storage, and autonomous driving technology.
+pdf.setFontSize(11);
+pdf.text(`Introduction: Story First`, 20, 40);
+pdf.setFontSize(10);
+pdf.text(
+  `Our goal with this report is to understand Lululemon not just through numbers but via its narrative—
+how it started, what it sells, where it makes money, and why customers adore the brand. Inspired by 
+Aswath Damodaran’s “story is important,” we break down the complex financials into bite-sized insights.`,
+  20, 47, { maxWidth: 170 }
+);
 
-Current Market Position
+pdf.setFontSize(11);
+pdf.text("Story & Purpose", 20, 75);
+pdf.setFontSize(10);
+pdf.text(
+  `Lululemon began in a Vancouver yoga studio in 1998, inspired by athletic design and community. The 
+brand’s mission is to elevate human potential by helping people feel their best. Its growth has been 
+guided by a “Power of Three x2” plan (product innovation, omnichannel growth, and market expansion) and 
+values like inclusion, courage, fun, and personal responsibility.`,
+  20, 82, { maxWidth: 170 }
+);
 
-As of December 2024, Tesla maintains its position as the world's most valuable automaker by market capitalization, despite increased competition from traditional manufacturers and new EV startups. The company's market cap reflects investor confidence in its technological leadership and execution capabilities.
+pdf.setFontSize(11);
+pdf.text("Products & Fabrics", 20, 118);
+pdf.setFontSize(10);
+pdf.text(
+  `Lululemon is known for proprietary fabric families:`, 
+  20, 125, { maxWidth: 170 }
+);
+pdf.text([
+  "• Nulu (Align line): buttery-soft yoga fabric",
+  "• Everlux (Wunder Train): ultra-fast-drying training fabric",
+  "• Nulux (Fast and Free): lightweight running fabric",
+  "• Warpstreme (ABC & Commission pants): structured stretch for everyday wear",
+  "• Softstreme (oversized lounge sets): peach-soft feel",
+], 25, 135, { maxWidth: 165 });
+pdf.text(
+  `These fabrics power their best sellers—Align leggings for women and ABC pants for men—
+and give a clear moat against rivals.`,
+  20, 168, { maxWidth: 170 }
+);
 
-Financial Performance Highlights
+pdf.addPage();
+pdf.setFontSize(11);
+pdf.text("Revenue Mix & Best Sellers", 20, 30);
+pdf.setFontSize(10);
+pdf.text(
+  `Women’s products contribute roughly 63% of revenue, men’s about 24%, and accessories/footwear the rest. 
+Sales are strongest in North America but international markets, especially China, are growing rapidly. 
+Best sellers include Align leggings, Scuba pullovers, ABC pants, and Pace Breaker shorts. 
+Undervalued gems include Everlux training bottoms and Softstreme loungewear, which have room to become future leaders.`,
+  20, 37, { maxWidth: 170 }
+);
 
-Tesla's recent quarterly results demonstrate strong operational efficiency improvements. Key metrics include:
-• Revenue growth of 15% year-over-year
-• Improved gross margins across all vehicle segments
-• Strong free cash flow generation
-• Expanding energy storage business contributing to diversified revenue streams
+pdf.setFontSize(11);
+pdf.text("Competition & Risks", 20, 90);
+pdf.setFontSize(10);
+pdf.text(
+  `Major rivals include Alo, Athleta, Vuori, and Nike. Lululemon commands a higher price partly thanks to 
+fabric technology and brand prestige. However, risks include consumer spending slowdowns, tariff impacts, 
+concentrated suppliers, competitors’ innovation, and lingering Mirror acquisition issues. Supply chain 
+disruption or aggressive discounting could hit margins.`,
+  20, 97, { maxWidth: 170 }
+);
 
-The company's focus on manufacturing efficiency and cost reduction has resulted in improved profitability metrics, making Tesla increasingly attractive to value-oriented investors alongside growth investors.
+pdf.setFontSize(11);
+pdf.text("Growth Drivers", 20, 150);
+pdf.setFontSize(10);
+pdf.text([
+  "• International expansion: China and EMEA remain high-growth markets.",
+  "• Men’s category: Still underpenetrated; management is focusing heavily here.",
+  "• Footwear and accessories: A newer product line raising average transaction value.",
+  "• Digital membership: Potentially drives recurring revenue."
+], 25, 157, { maxWidth: 165 });
 
-Future Outlook and Risks
+pdf.addPage();
+pdf.setFontSize(11);
+pdf.text("Financial Snapshot", 20, 30);
+pdf.setFontSize(10);
+pdf.text(
+  `Revenue has climbed from around $3.3B in FY2018 to $10.6B in FY2024, with trailing-twelve-month 
+EPS about $14.7. The balance sheet shows low financial debt but large lease obligations; operating 
+margins are industry leading, near 23%.`,
+  20, 37, { maxWidth: 170 }
+);
 
-Looking ahead, Tesla faces both significant opportunities and challenges. The global transition to electric vehicles presents a massive addressable market, while the company's investments in autonomous driving technology could unlock entirely new revenue streams.
+pdf.setFontSize(11);
+pdf.text("Intrinsic Value & Entry Strategy", 20, 75);
+pdf.setFontSize(10);
+pdf.text(
+  `Below is the updated valuation table. We add a baseline row using current TTM EPS (~$14.7) and 
+P/E (~13.7×) for context. The scenarios use EPS estimates of $15.5, $16.5, and $17.5 with P/E multiples 
+of 18×, 20×, and 22×. Upside is calculated relative to today’s ~$202 share price.`,
+  20, 82, { maxWidth: 170 }
+);
 
-However, investors should consider potential headwinds including increased competition, regulatory changes, and the cyclical nature of the automotive industry. Tesla's premium valuation requires continued execution on growth initiatives and technological innovation.
+pdf.setFontSize(9);
+pdf.text(
+  "Disclaimer: This analysis is for informational purposes only and should not be considered as investment advice. Please consult with a qualified financial advisor before making investment decisions.",
+  20, 120, { maxWidth: 170 }
+);
 
-Disclaimer: This analysis is for informational purposes only and should not be considered as investment advice. Please consult with a qualified financial advisor before making investment decisions.`;
-            
-            pdf.text(content, 20, 80, { maxWidth: 170 });
-            
-            // Save the PDF
-            pdf.save('tesla-stock-analysis.pdf');
-        });
+pdf.save("lululemon-analysis.pdf");
+
         
         // Comment functionality
         document.getElementById('postComment').addEventListener('click', function() {
@@ -552,3 +625,4 @@ Disclaimer: This analysis is for informational purposes only and should not be c
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'977ef9ca0224de92',t:'MTc1NjY2ODk3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
